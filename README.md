@@ -62,7 +62,7 @@ You can add more or fewer habits as needed.
 To track habits across a fixed period (e.g. 21 days), use:
 
 ```excel
-=SEQUENCE(,21)
+=SEQUENCE(1,21)
 ```
 
 This generates 21 consecutive day numbers across columns.
@@ -147,7 +147,9 @@ This displays: Mon, Tue, Wed, etc.
 Counts how many habits were completed on a given day:
 
 ```excel
-=COUNTIF(HabitRange,TRUE)
+=COUNTIF(HabitRange,"True")
+
+=COUNTIF(C14:C23,"True")
 ```
 
 > If using `"X"` instead of checkboxes:
@@ -162,6 +164,8 @@ Counts how many habits were completed on a given day:
 
 ```excel
 =CompletedTasks / COUNTA(HabitList)
+
+=C25/COUNTA(C14:C23)
 ```
 
 Format as **Percentage** and drag across all days.
@@ -197,6 +201,8 @@ The chart updates automatically as checkboxes are ticked.
 
 ```excel
 =COUNTIF(DayRange,TRUE)
+
+=COUNTIF(C14:W14,"TRUE")
 ```
 
 Drag down for all habits.
@@ -207,6 +213,8 @@ Drag down for all habits.
 
 ```excel
 =REPT("|", TotalCompleted * 4)
+
+=REPT("|",X14*3)
 ```
 
 Formatting tips:
@@ -229,6 +237,8 @@ Hide the numeric column and display only the bar.
   TotalCompletedRange,
   HabitNameRange
 )
+
+=XLOOKUP(MAX(X14:X23),X14:X23,B14:B23)
 ```
 
 Returns the habit completed most frequently.
@@ -243,6 +253,8 @@ Returns the habit completed most frequently.
   TotalCompletedRange,
   HabitNameRange
 )
+
+=XLOOKUP(MIN(X14:X23),X14:X23,B14:B23)
 ```
 
 Returns the least consistent habit.
@@ -255,6 +267,8 @@ Returns the least consistent habit.
 
 ```excel
 =COUNTIF(CompletionPercentRange,"100%")
+
+=COUNTIF(C26:W26,"100%")
 ```
 
 ---
@@ -263,6 +277,8 @@ Returns the least consistent habit.
 
 ```excel
 =COUNTIF(CompletionPercentRange,">50%")
+
+=COUNTIF(C26:W26,">50%")
 ```
 
 ---
@@ -271,6 +287,8 @@ Returns the least consistent habit.
 
 ```excel
 =COUNTIF(CompletionPercentRange,"0%")
+
+=COUNTIF(C26:W26,"0%")
 ```
 
 ---
