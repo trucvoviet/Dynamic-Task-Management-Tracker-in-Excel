@@ -1,9 +1,16 @@
 # Dynamic-Task-Management-Tracker-in-Excel
 
----
 
 ## Overview
 This tutorial teaches how to create an interactive task management tracker in Excel with live KPIs that automatically update when new tasks are added. The tracker displays task status distribution, overdue items, and a complete task list with conditional formatting.
+
+The final result is a **Task Management Tracker** built entirely in Excel—no add-ins required.
+
+> Example outputs of the completed tracker.
+
+### Task Management Dshboard
+
+![Final Dashboard](imgs/Dashboard.png)
 
 ## File Structure
 
@@ -85,7 +92,6 @@ Prevents data entry errors and ensures consistency (e.g., preventing "Emily" vs 
 #### Apply Same Validation to Other Columns
 - **Team column**: Validate against team list in Support sheet
 - **Status column**: Validate against status options (Completed, In Progress, Not Started)
-- **Priority column**: Can add validation if needed
 
 ### 4. Preparing the Dashboard Layout
 
